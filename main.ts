@@ -6,9 +6,6 @@ export function parseInput(input: string | null) {
     .trim()
     .replaceAll(/\s+/g, " ")
     .split(" ").map((w) => w.trim());
-  if (words.length % 2 === 1) {
-    throw new Error("Seed phrase length must be even.");
-  }
   return words;
 }
 
@@ -52,6 +49,12 @@ if (import.meta.main) {
   const input = prompt("Seed phrase:");
   const words = parseInput(input);
   const factors = getLowerFactors(words.length);
+  if (factors.length === 0) {
+    console.log(
+      `\nNo permutations found. Seed phrase of length ${words.length} can't be arranged into a grid.`,
+    );
+    Deno.exit(0);
+  }
   const permutations = factors.map((columns) => getPermutations(words, columns))
     .flat();
   console.log("\n");

@@ -10,10 +10,6 @@ Deno.test("parseInput throws on null", () => {
   assertThrows(() => parseInput(null));
 });
 
-Deno.test("parseInput throws on invalid length", () => {
-  assertThrows(() => parseInput("test test test"));
-});
-
 Deno.test("parseInput collapses whitespace correctly", () => {
   const words = parseInput(
     "     \n\ntest     \n\ntest test  test test test\ntest\n     \n\ntest     \n\n",
@@ -139,6 +135,12 @@ Deno.test("getLowerFactors returns correct factors of 12", () => {
   assertArrayIncludes<number>(factors, [2, 3]);
   assertFalse(factors.includes(4));
   assertFalse(factors.includes(6));
+});
+
+Deno.test("getLowerFactors returns correct factors of 15", () => {
+  const factors = getLowerFactors(15);
+  assertArrayIncludes<number>(factors, [3]);
+  assertFalse(factors.includes(5));
 });
 
 Deno.test("getLowerFactors returns correct factors of 24", () => {
