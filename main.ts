@@ -2,7 +2,10 @@ export function parseInput(input: string | null) {
   if (input === null) {
     throw new Error("No seed phrase entered.");
   }
-  const words = input.split(/\s/g).map((w) => w.trim());
+  const words = input
+    .trim()
+    .replaceAll(/\s+/g, " ")
+    .split(" ").map((w) => w.trim());
   if (words.length % 2 === 1) {
     throw new Error("Seed phrase length must be even.");
   }

@@ -14,6 +14,13 @@ Deno.test("parseInput throws on invalid length", () => {
   assertThrows(() => parseInput("test test test"));
 });
 
+Deno.test("parseInput collapses whitespace correctly", () => {
+  const words = parseInput(
+    "     \n\ntest     \n\ntest test  test test test\ntest\n     \n\ntest     \n\n",
+  );
+  assertEquals(words.length, 8);
+});
+
 Deno.test("parseInput parses 12 word seed phrase", () => {
   const words = parseInput(
     "test test test test test test test test test test test junk",
