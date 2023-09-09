@@ -24,6 +24,13 @@ Deno.test("parseInput parses 12 word seed phrase", () => {
   assertEquals(words.length, 12);
 });
 
+Deno.test("parseInput parses 15 word seed phrase", () => {
+  const words = parseInput(
+    "test test test test test test test test test test test test test test junk",
+  );
+  assertEquals(words.length, 15);
+});
+
 Deno.test("parseInput parses 24 word seed phrase", () => {
   const words = parseInput(
     "test test test test test test test test test test test junk test test test test test test test test test test test junk",
@@ -77,6 +84,18 @@ const test12WordGrids = [
     columns: 3,
   },
 ];
+const test15WordGrids = [
+  {
+    testName: "3-column vertical-lr incorrectly recorded as horizontal-tb",
+    words: "1 4 7 10 13 2 5 8 11 14 3 6 9 12 15".split(" "),
+    columns: 3,
+  },
+  {
+    testName: "3-column horizontal-tb incorrectly recorded as vertical-lr",
+    words: "1 6 11 2 7 12 3 8 13 4 9 14 5 10 15".split(" "),
+    columns: 3,
+  },
+];
 const test24WordGrids = [
   {
     testName: "6-column vertical-lr incorrectly recorded as horizontal-tb",
@@ -119,6 +138,14 @@ Deno.test("getPermutations returns correct permutations of 12-word test grids", 
   test12WordGrids.forEach((grid) => {
     const permutations = getPermutations(grid.words, grid.columns);
     assertArrayIncludes<string>(permutations, ["1 2 3 4 5 6 7 8 9 10 11 12"]);
+  });
+});
+Deno.test("getPermutations returns correct permutations of 15-word test grids", () => {
+  test15WordGrids.forEach((grid) => {
+    const permutations = getPermutations(grid.words, grid.columns);
+    assertArrayIncludes<string>(permutations, [
+      "1 2 3 4 5 6 7 8 9 10 11 12 13 14 15",
+    ]);
   });
 });
 Deno.test("getPermutations returns correct permutations of 24-word test grids", () => {
