@@ -1,4 +1,9 @@
-export function parseInput(input: string | null) {
+/**
+ * Normalizes a seed phrase to remove extraneous whitespace, then splits the words into an array.
+ * @param {string} input A seed phrase with any number of whitespace in-between words.
+ * @returns {Array<string>} An array of the seed phrase words.
+ */
+export function parseInput(input: string | null): Array<string> {
   if (input === null) {
     throw new Error("No seed phrase entered.");
   }
@@ -9,7 +14,13 @@ export function parseInput(input: string | null) {
   return words;
 }
 
-export function getPermutations(words: Array<string>, columns: number) {
+/**
+ * Gets the permutations of a seed phrase that was recorded from a transposition error.
+ * @param {Array<string>} words An array of words.
+ * @param {number} columns The number of columns in the grid that the words were displayed in.
+ * @returns {Array<string>} An array of the permutations that the words could take.
+ */
+export function getPermutations(words: Array<string>, columns: number): Array<string> {
   if (words.length % columns !== 0) {
     throw new Error(
       "Seed phrase length must be divisible by number of columns.",
@@ -34,8 +45,12 @@ export function getPermutations(words: Array<string>, columns: number) {
   return [verticalLR.join(" "), horizontalTB.join(" ")];
 }
 
-// Gets all factors that are >= 2 and not a multiple of another factor
-export function getLowerFactors(num: number) {
+/**
+ * Gets all factors of a number that are >= 2 and not a multiple of another factor (the "lower" factors).
+ * @param {number} num A number to get the lower factors of.
+ * @returns {Array<number>} An array of the lower factors of the input.
+ */
+export function getLowerFactors(num: number): Array<number> {
   const lowerFactors = [];
   for (let i = 2; i < num / (lowerFactors.at(-1) ?? 1); i++) {
     if (num % i === 0) {
