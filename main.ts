@@ -20,7 +20,10 @@ export function parseInput(input: string | null): Array<string> {
  * @param {number} columns The number of columns in the grid that the words were displayed in.
  * @returns {Array<string>} An array of the permutations that the words could take.
  */
-export function getPermutations(words: Array<string>, columns: number): Array<string> {
+export function getPermutations(
+  words: Array<string>,
+  columns: number,
+): Array<string> {
   if (words.length % columns !== 0) {
     throw new Error(
       "Seed phrase length must be divisible by number of columns.",
