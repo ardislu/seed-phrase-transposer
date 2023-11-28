@@ -48,3 +48,18 @@ Seed phrase: 1 4 7 10 2 5 8 11 3 6 9 12
 1 2 3 4 5 6 7 8 9 10 11 12 <-- Correct permutation found!
 1 10 8 6 4 2 11 9 7 5 3 12
 ```
+
+## Security
+
+This CLI is completely self-contained and does not require any file, network, or
+environment access. Since Deno is
+[secure by default](https://docs.deno.com/runtime/manual/basics/permissions),
+the `run` command above will automatically restrict this access.
+
+Before using this CLI, you should also ensure that command outputs (`stdout`)
+are _not_ being logged by your terminal application or any other external
+programs (e.g.
+[`Start-Transcript`](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.host/start-transcript)
+on Windows/PowerShell or
+[`screen`](https://manpages.ubuntu.com/manpages/trusty/en/man1/screen.1.html)/[`script`](https://manpages.ubuntu.com/manpages/trusty/en/man1/script.1.html)
+on Linux/bash).
