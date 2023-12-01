@@ -63,7 +63,7 @@ export function getLowerFactors(num: number): Array<number> {
   return lowerFactors;
 }
 
-if (import.meta.main) {
+export function main() {
   const input = prompt("Seed phrase:");
   const words = parseInput(input);
   const factors = getLowerFactors(words.length);
@@ -77,4 +77,8 @@ if (import.meta.main) {
     .flat();
   console.log("\n");
   permutations.forEach((permutation) => console.log(permutation));
+}
+
+if (import.meta.main) {
+  main();
 }
