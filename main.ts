@@ -63,6 +63,9 @@ export function getLowerFactors(num: number): Array<number> {
   return lowerFactors;
 }
 
+/**
+ * Entry point to use the program. This function is automatically called if `main.ts` is invoked directly by the Deno CLI.
+ */
 export function main() {
   const input = prompt("Seed phrase:");
   const words = parseInput(input);
