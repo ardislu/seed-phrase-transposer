@@ -63,3 +63,17 @@ programs (e.g.
 on Windows/PowerShell or
 [`screen`](https://manpages.ubuntu.com/manpages/trusty/en/man1/screen.1.html)/[`script`](https://manpages.ubuntu.com/manpages/trusty/en/man1/script.1.html)
 on Linux/bash).
+
+`main_test.ts` imports dependencies from the
+[Deno standard library](https://docs.deno.com/runtime/manual/basics/standard_library)
+via [deno.land](https://deno.land/std). Use the
+[`--lock` flag](https://docs.deno.com/runtime/manual/basics/modules/integrity_checking)
+to check the integrity of retrieved code against the `deno.lock` file before
+execution:
+
+```
+deno test --lock
+```
+
+`main.ts` does not have any dependencies, so `deno.lock` has no effect on the
+main CLI.
