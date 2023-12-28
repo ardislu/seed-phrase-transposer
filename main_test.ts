@@ -188,7 +188,7 @@ Deno.test("main logs permutations of a 12-word seed phrase", () => {
   const promptStub = stub(
     globalThis,
     "prompt",
-    (_) => "1 4 7 10 2 5 8 11 3 6 9 12",
+    () => "1 4 7 10 2 5 8 11 3 6 9 12",
   );
 
   main();
@@ -203,7 +203,7 @@ Deno.test("main exits cleanly on a malformed seed phrase", () => {
   const promptStub = stub(
     globalThis,
     "prompt",
-    (_) => "1 2 3 4 5",
+    () => "1 2 3 4 5",
   );
 
   assertThrows(main); // Calling Deno.exit() within a test throws an error
