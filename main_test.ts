@@ -4,12 +4,12 @@ import {
   assertEquals,
   assertFalse,
   assertThrows,
-} from "https://deno.land/std@0.210.0/assert/mod.ts";
+} from "https://deno.land/std@0.211.0/assert/mod.ts";
 import {
   assertSpyCalls,
   spy,
   stub,
-} from "https://deno.land/std@0.210.0/testing/mock.ts";
+} from "https://deno.land/std@0.211.0/testing/mock.ts";
 
 Deno.test("parseInput throws on null", () => {
   assertThrows(() => parseInput(null));
