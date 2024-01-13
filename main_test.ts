@@ -199,7 +199,7 @@ Deno.test("main logs permutations of a 12-word seed phrase", () => {
 });
 
 Deno.test("main exits cleanly on a malformed seed phrase", () => {
-  const consoleSpy = spy(console, "log");
+  const consoleSpy = spy(console, "error");
   const promptStub = stub(
     globalThis,
     "prompt",
@@ -207,7 +207,7 @@ Deno.test("main exits cleanly on a malformed seed phrase", () => {
   );
 
   assertThrows(main); // Calling Deno.exit() within a test throws an error
-  assertSpyCalls(consoleSpy, 1); // console.log was called exactly 1 time
+  assertSpyCalls(consoleSpy, 1); // console.error was called exactly 1 time
 
   consoleSpy.restore();
   promptStub.restore();

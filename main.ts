@@ -71,8 +71,9 @@ export function main() {
   const words = parseInput(input);
   const factors = getLowerFactors(words.length);
   if (factors.length === 0) {
-    console.log(
-      `\nNo permutations found. Seed phrase of length ${words.length} can't be arranged into a grid.`,
+    console.error(
+      `%c\nNo permutations found. Seed phrase of length ${words.length} can't be arranged into a grid.`,
+      "color: red",
     );
     Deno.exit(0);
   }
