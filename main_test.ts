@@ -212,3 +212,18 @@ Deno.test("main exits cleanly on a malformed seed phrase", () => {
   consoleSpy.restore();
   promptStub.restore();
 });
+
+Deno.test("main exits cleanly on no input", () => {
+  const consoleSpy = spy(console, "error");
+  const promptStub = stub(
+    globalThis,
+    "prompt",
+    () => "",
+  );
+
+  assertThrows(main);
+  assertSpyCalls(consoleSpy, 1);
+
+  consoleSpy.restore();
+  promptStub.restore();
+});

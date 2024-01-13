@@ -68,6 +68,13 @@ export function getLowerFactors(num: number): Array<number> {
  */
 export function main() {
   const input = prompt("Seed phrase:");
+  if (input === "") {
+    console.error(
+      "%c\nNo input provided. Enter a seed phrase to check permutations.",
+      "color: red",
+    );
+    Deno.exit(0);
+  }
   const words = parseInput(input);
   const factors = getLowerFactors(words.length);
   if (factors.length === 0) {
