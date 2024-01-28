@@ -1,6 +1,8 @@
 # seed-phrase-transposer
 
-This is a simple [Deno](https://deno.land/) CLI that prints permutations of a seed phrase to help test if a transposition error occurred while the seed phrase was recorded.
+This is a simple [Deno](https://deno.land/) CLI that prints permutations of a
+seed phrase to help test if a transposition error occurred while the seed phrase
+was recorded.
 
 ## Background
 
@@ -10,10 +12,11 @@ phrases are ubiquitous in crypto. However, due to the length of the seed phrase,
 they're often presented to users in a grid. Sometimes bad wallet UIs do not
 number the words,
 [making the order of the words ambiguous](https://knowyourmeme.com/memes/dont-dead-open-inside)
-and introducing the risk of a user recording the words in the wrong order
-(a transposition error).
+and introducing the risk of a user recording the words in the wrong order (a
+transposition error).
 
-This tool is intended to show permutations of a seed phrase when read from ambiguous grid layouts to assist with testing and potential recovery.
+This tool is intended to show permutations of a seed phrase when read from
+ambiguous grid layouts to assist with testing and potential recovery.
 
 ## Example
 
@@ -33,7 +36,8 @@ incorrectly record these numbers top-to-bottom, left-to-right. Like this:
 1 4 7 10 2 5 8 11 3 6 9 12
 ```
 
-This CLI will output permutations of the input, helping a user discover the correct one:
+This CLI will output permutations of the input, helping a user discover the
+correct one:
 
 ```
 > deno run main.ts
