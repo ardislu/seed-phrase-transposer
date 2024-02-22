@@ -4,12 +4,12 @@ import {
   assertEquals,
   assertFalse,
   assertThrows,
-} from "https://deno.land/std@0.216.0/assert/mod.ts";
+} from "https://deno.land/std@0.217.0/assert/mod.ts";
 import {
   assertSpyCalls,
   spy,
   stub,
-} from "https://deno.land/std@0.216.0/testing/mock.ts";
+} from "https://deno.land/std@0.217.0/testing/mock.ts";
 
 Deno.test("parseInput throws on null", () => {
   assertThrows(() => parseInput(null));
@@ -184,8 +184,8 @@ Deno.test("getLowerFactors returns correct factors of 24", () => {
 });
 
 Deno.test("main logs permutations of a 12-word seed phrase", () => {
-  const consoleSpy = spy(console, "log");
-  const promptStub = stub(
+  using consoleSpy = spy(console, "log");
+  using _promptStub = stub(
     globalThis,
     "prompt",
     () => "1 4 7 10 2 5 8 11 3 6 9 12",
@@ -193,14 +193,11 @@ Deno.test("main logs permutations of a 12-word seed phrase", () => {
 
   main();
   assertSpyCalls(consoleSpy, 5); // console.log was called exactly 5 times
-
-  consoleSpy.restore();
-  promptStub.restore();
 });
 
 Deno.test("main exits cleanly on a malformed seed phrase", () => {
-  const consoleSpy = spy(console, "error");
-  const promptStub = stub(
+  using consoleSpy = spy(console, "error");
+  using _promptStub = stub(
     globalThis,
     "prompt",
     () => "1 2 3 4 5",
@@ -208,14 +205,11 @@ Deno.test("main exits cleanly on a malformed seed phrase", () => {
 
   assertThrows(main); // Calling Deno.exit() within a test throws an error
   assertSpyCalls(consoleSpy, 1); // console.error was called exactly 1 time
-
-  consoleSpy.restore();
-  promptStub.restore();
 });
 
 Deno.test("main exits cleanly on no input", () => {
-  const consoleSpy = spy(console, "error");
-  const promptStub = stub(
+  using consoleSpy = spy(console, "error");
+  using _promptStub = stub(
     globalThis,
     "prompt",
     () => "",
@@ -223,7 +217,4 @@ Deno.test("main exits cleanly on no input", () => {
 
   assertThrows(main);
   assertSpyCalls(consoleSpy, 1);
-
-  consoleSpy.restore();
-  promptStub.restore();
 });
