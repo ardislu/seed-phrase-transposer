@@ -67,6 +67,13 @@ User enters:
 getPermutations should return:
 [ "1 2 3 4 5 6 7 8 9 10 11 12", "1 10 8 6 4 2 11 9 7 5 3 12" ]
 */
+const test4WordGrids = [
+  {
+    testName: "2-column vertical-lr incorrectly recorded as horizontal-tb",
+    words: "1 3 2 4".split(" "),
+    columns: 2,
+  },
+];
 const test12WordGrids = [
   {
     testName: "2-column vertical-lr incorrectly recorded as horizontal-tb",
@@ -139,6 +146,13 @@ const test24WordGrids = [
     columns: 12,
   },
 ];
+Deno.test("getPermutations returns correct permutations of 4-word test grids", () => {
+  test4WordGrids.forEach((grid) => {
+    const permutations = getPermutations(grid.words, grid.columns);
+    assertArrayIncludes<string>(permutations, ["1 2 3 4"]);
+    assertEquals(permutations.length, 1); // Should de-duplicate
+  });
+});
 Deno.test("getPermutations returns correct permutations of 12-word test grids", () => {
   test12WordGrids.forEach((grid) => {
     const permutations = getPermutations(grid.words, grid.columns);

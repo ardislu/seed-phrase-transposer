@@ -45,7 +45,7 @@ export function getPermutations(
     horizontalTB[horizontalIndex] = word;
   }
 
-  return [verticalLR.join(" "), horizontalTB.join(" ")];
+  return Array.from(new Set([verticalLR.join(" "), horizontalTB.join(" ")]));
 }
 
 /**
