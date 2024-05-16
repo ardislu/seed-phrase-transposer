@@ -66,7 +66,7 @@ on Linux/bash).
 
 `main_test.ts` imports dependencies from the
 [Deno standard library](https://docs.deno.com/runtime/manual/basics/standard_library)
-via [deno.land](https://deno.land/std). Use the
+via [JSR](https://jsr.io/@std). Use the
 [`--lock` flag](https://docs.deno.com/runtime/manual/basics/modules/integrity_checking)
 to check the integrity of retrieved code against the `deno.lock` file before
 execution:
