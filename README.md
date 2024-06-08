@@ -49,6 +49,32 @@ Seed phrase: 1 4 7 10 2 5 8 11 3 6 9 12
 1 10 8 6 4 2 11 9 7 5 3 12
 ```
 
+## Usage
+
+Clone this repo and run `main.ts`:
+
+```
+> deno run main.ts
+Seed phrase:
+```
+
+Or you can directly run `main.ts` from its raw GitHub URL:
+
+```
+> deno run https://raw.githubusercontent.com/ardislu/seed-phrase-transposer/main/main.ts
+Seed phrase:
+```
+
+Or install `main.ts` globally and use it as a more typical CLI:
+
+```
+> deno install --global --name spt https://raw.githubusercontent.com/ardislu/seed-phrase-transposer/main/main.ts
+✅ Successfully installed spt
+
+> spt
+Seed phrase:
+```
+
 ## Security
 
 This CLI is completely self-contained and does not require any file, network, or
