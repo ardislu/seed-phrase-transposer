@@ -10,7 +10,7 @@ export function parseInput(input: string | null): Array<string> {
   const words = input
     .trim()
     .replaceAll(/\s+/g, " ")
-    .split(" ").map((w) => w.trim());
+    .split(" ");
   return words;
 }
 
