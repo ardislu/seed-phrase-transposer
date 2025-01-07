@@ -103,3 +103,19 @@ deno test --lock
 
 `main.ts` does not have any dependencies, so `deno.lock` has no effect on the
 main CLI.
+
+## Docker container
+
+For additional security, you can run this CLI within a Docker container.
+
+1. Build the Docker image using the provided `Dockerfile`:
+
+```
+docker build -t spt .
+```
+
+2. Create a new container without network access and run the CLI:
+
+```
+docker run -it --rm --network none spt
+```
