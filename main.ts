@@ -60,6 +60,7 @@ export function getLowerFactors(num: number): Array<number> {
       lowerFactors.push(i);
     }
   }
+  lowerFactors.reverse(); // The middle factors are the most likely grid arrangements, test those first
   return lowerFactors;
 }
 

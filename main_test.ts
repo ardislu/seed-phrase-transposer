@@ -1,5 +1,6 @@
 import { getLowerFactors, getPermutations, main, parseInput } from "./main.ts";
 import {
+  assert,
   assertArrayIncludes,
   assertEquals,
   assertFalse,
@@ -191,6 +192,13 @@ Deno.test("getLowerFactors returns correct factors of 24", () => {
   assertFalse(factors.includes(6));
   assertFalse(factors.includes(8));
   assertFalse(factors.includes(12));
+});
+
+Deno.test("getLowerFactors returns an array sorted high-to-low", () => {
+  const factors = getLowerFactors(24);
+  for (let i = 0; i < factors.length - 1; i++) {
+    assert(factors[i] > factors[i + 1]);
+  }
 });
 
 Deno.test("main logs permutations of a 12-word seed phrase", () => {

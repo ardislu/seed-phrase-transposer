@@ -43,10 +43,10 @@ correct one:
 > deno run main.ts
 Seed phrase: 1 4 7 10 2 5 8 11 3 6 9 12
 
-1 8 4 11 7 3 10 6 2 9 5 12
-1 7 2 8 3 9 4 10 5 11 6 12
 1 2 3 4 5 6 7 8 9 10 11 12 <-- Correct permutation found!
 1 10 8 6 4 2 11 9 7 5 3 12
+1 8 4 11 7 3 10 6 2 9 5 12
+1 7 2 8 3 9 4 10 5 11 6 12
 ```
 
 ## Usage
