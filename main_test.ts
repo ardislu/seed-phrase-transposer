@@ -6,7 +6,7 @@ import {
   assertFalse,
   assertThrows,
 } from "jsr:@std/assert@1.0.12";
-import { assertSpyCalls, spy, stub } from "jsr:@std/testing@1.0.10/mock";
+import { assertSpyCalls, spy, stub } from "jsr:@std/testing@1.0.11/mock";
 
 Deno.test("parseInput throws on null", () => {
   assertThrows(() => parseInput(null));
