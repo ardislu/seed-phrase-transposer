@@ -114,8 +114,8 @@ For additional security, you can run this CLI within a Docker container.
 docker build -t spt .
 ```
 
-2. Create a new container without network access and run the CLI:
+2. Create a new container with restrictive permissions and run the CLI:
 
 ```
-docker run -it --rm --network none spt
+docker run -it --rm --read-only --network none spt
 ```
