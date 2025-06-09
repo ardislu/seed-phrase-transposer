@@ -117,5 +117,5 @@ docker build -t spt .
 2. Create a new container with restrictive permissions and run the CLI:
 
 ```
-docker run -it --rm --read-only --network none spt
+docker run -it --rm --read-only --network none --cap-drop all --security-opt no-new-privileges spt
 ```
