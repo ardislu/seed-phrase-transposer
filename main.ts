@@ -91,6 +91,8 @@ export function main() {
   permutations.forEach((permutation) => console.log(permutation));
 }
 
+// deno-coverage-ignore-start
 if (import.meta.main) {
   main();
 }
+// deno-coverage-ignore-stop
