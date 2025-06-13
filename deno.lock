@@ -4,7 +4,7 @@
     "jsr:@std/assert@1.0.13": "1.0.13",
     "jsr:@std/assert@^1.0.13": "1.0.13",
     "jsr:@std/internal@^1.0.6": "1.0.8",
-    "jsr:@std/testing@1.0.13": "1.0.13"
+    "jsr:@std/testing@1.0.14": "1.0.14"
   },
   "jsr": {
     "@std/assert@1.0.13": {
@@ -16,8 +16,8 @@
     "@std/internal@1.0.8": {
       "integrity": "fc66e846d8d38a47cffd274d80d2ca3f0de71040f855783724bb6b87f60891f5"
     },
-    "@std/testing@1.0.13": {
-      "integrity": "74418be16f627dfe996937ab0ffbdbda9c1f35534b78724658d981492f121e71",
+    "@std/testing@1.0.14": {
+      "integrity": "144b3737105b9071cb50c957681f58a1b8ec0f3e5b19ad830f401c5fa931e8f0",
       "dependencies": [
         "jsr:@std/assert@^1.0.13"
       ]
