@@ -1,4 +1,4 @@
-FROM denoland/deno:alpine-2.3.6
+FROM denoland/deno:alpine-2.3.7
 USER deno
 # Instantiate analysis cache to avoid console warnings later when running this image with the --read-only flag
 RUN ["deno", "eval", "''"]
