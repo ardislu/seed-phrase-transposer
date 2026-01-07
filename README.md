@@ -4,6 +4,11 @@ This is a simple [Deno](https://deno.land/) CLI that prints permutations of a
 seed phrase to help test if a transposition error occurred while the seed phrase
 was recorded.
 
+Code repository mirrors:
+[GitHub](https://github.com/ardislu/seed-phrase-transposer),
+[Codeberg](https://codeberg.org/ardislu/seed-phrase-transposer),
+[git.ardis.lu](https://git.ardis.lu/seed-phrase-transposer)
+
 ## Background
 
 12-word and 24-word
