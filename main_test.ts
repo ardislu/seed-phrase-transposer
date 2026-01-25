@@ -14,7 +14,7 @@ Deno.test("parseInput throws on null", () => {
 
 Deno.test("parseInput collapses whitespace correctly", () => {
   const words = parseInput(
-    "     \n\ntest     \n\ntest test  test test test\ntest\n     \n\ntest     \n\n",
+    "     \n\ntest     \r\n\r\ntest test  test test test\ntest\n     \n\ntest     \n\r\n\r",
   );
   assertEquals(words.length, 8);
 });
