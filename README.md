@@ -109,11 +109,29 @@ deno test --lock
 `main.ts` does not have any dependencies, so `deno.lock` has no effect on the
 main CLI.
 
-## Docker container
+## Container
 
-For additional security, you can run this CLI within a Docker container.
+For additional security, you can run this CLI within a container.
 
-1. Build the Docker image using the provided `Dockerfile`:
+### Using WSL container
+
+This section is referring to [`wslc.exe`](https://devblogs.microsoft.com/commandline/wsl-container-is-now-available-for-public-preview/), not running Docker within WSL.
+
+1. Build the image using the provided `Dockerfile`:
+
+```
+wslc build -t spt .
+```
+
+2. Create a new container and run the CLI:
+
+```
+wslc run -it --rm spt
+```
+
+### Using Docker
+
+1. Build the image using the provided `Dockerfile`:
 
 ```
 docker build -t spt .
