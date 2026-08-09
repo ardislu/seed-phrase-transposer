@@ -3,8 +3,8 @@
   "specifiers": {
     "jsr:@std/assert@1.0.19": "1.0.19",
     "jsr:@std/assert@^1.0.19": "1.0.19",
-    "jsr:@std/internal@^1.0.12": "1.0.13",
-    "jsr:@std/testing@1.0.18": "1.0.18"
+    "jsr:@std/internal@^1.0.12": "1.0.14",
+    "jsr:@std/testing@1.0.20": "1.0.20"
   },
   "jsr": {
     "@std/assert@1.0.19": {
@@ -13,11 +13,11 @@
         "jsr:@std/internal"
       ]
     },
-    "@std/internal@1.0.13": {
-      "integrity": "2f9546691d4ac2d32859c82dff284aaeac980ddeca38430d07941e7e288725c0"
+    "@std/internal@1.0.14": {
+      "integrity": "291516b3d4c35024d6ffbc0a9df5bf4c64116e05b50012cf846710152d2ffdf7"
     },
-    "@std/testing@1.0.18": {
-      "integrity": "d3152f57b11666bf6358d0e127c7e3488e91178b0c2d8fbf0793e1c53cd13cb1",
+    "@std/testing@1.0.20": {
+      "integrity": "21380ed438672762e4ec549cbf4fe41c5b68f5598773a30b64abe7375513e721",
       "dependencies": [
         "jsr:@std/assert@^1.0.19"
       ]
