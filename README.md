@@ -126,7 +126,7 @@ wslc build -t spt .
 2. Create a new container and run the CLI:
 
 ```
-wslc run -it --rm spt
+wslc run -it --rm --network none spt
 ```
 
 ### Using Docker
