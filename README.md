@@ -129,6 +129,22 @@ wslc build -t spt .
 wslc run -it --rm --network none spt
 ```
 
+### Using `apple/container`
+
+This section is referring to [`apple/container`](https://github.com/apple/container/), not running Docker on Mac.
+
+1. Build the image using the provided `Dockerfile`:
+
+```
+container build -t spt .
+```
+
+2. Create a new container and run the CLI:
+
+```
+container run -it --rm --read-only --network none --cap-drop all spt
+```
+
 ### Using Docker
 
 1. Build the image using the provided `Dockerfile`:
